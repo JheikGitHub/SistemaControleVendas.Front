@@ -1,0 +1,21 @@
+<div class="form">
+
+  <div class="form__cabecalho">
+    <h2 class="form__titulo">Comissões</h2>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Comissão R$</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of vendedores">
+        <td>{{item.vendedor}}</td>
+        <td>{{item.comissao}},00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

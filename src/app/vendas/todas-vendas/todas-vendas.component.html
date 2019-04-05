@@ -1,0 +1,34 @@
+<div class="cabecalhoBotao">
+  <a class="btn btn-primary" [routerLink]="['registra']"><i class="fas fa-plus-circle icon"></i> Registra venda</a>
+  <a class="btn btn-primary" [routerLink]="['/vendedor/comissao']">Comissão dos vendedores</a>
+</div>
+
+<div class="form">
+  
+  <div class="form__cabecalho">
+    <h2 class="form__titulo">Vendas</h2>
+
+    <div class="form__pesquisa">
+        <label class="form__label" for="quantidadeProduto">Pesquisa por data</label>
+        <input class="form__input" type="search" [(ngModel)]="valor" placeholder="aaaa-mm-dd"><i
+          class="fas fa-search"></i>
+      </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Valor Total R$</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venda of vendas | filtroData : valor">
+        <td>{{venda.produto.descricao}}</td>
+        <td>{{venda.quantidadeProduto}}</td>
+        <td>{{venda.valorTotal}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

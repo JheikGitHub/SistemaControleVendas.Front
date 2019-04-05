@@ -1,0 +1,25 @@
+<a class="btn btn-primary" [routerLink]="['registra']"><i class="fas fa-plus-circle icon"></i> Adiciona produto</a>
+
+<section class="form">
+  <div class="form__cabecalho">
+    <h2 class="form__titulo">Produtos</h2>
+
+    <div class="form__pesquisa">
+      <input class="form__input" type="search" [(ngModel)]="valor" placeholder="procura produto"><i
+        class="fas fa-search"></i>
+    </div>
+  </div>
+  <div class="cards">
+
+    <div class="card" *ngFor="let produto of produtos | buscar : valor">
+
+      <p class="card__descricao"><strong> {{produto.descricao}}</strong> </p>
+      <p class="card__valor"><strong>Preço:</strong> R$ {{produto.precoUnitario}},00</p>
+
+      <div class="card__footer">
+        <a class="btn btn-sucess" [routerLink]="['atualiza',produto.id]"> Editar</a>
+        <a class="btn btn-sucess" [routerLink]="['remove',produto.id]"> Excluir</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<form class="form" action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="form__cabecalho">
+    <h2 class="form__titulo">Cadastrar Produto</h2>
+  </div>
+  
+  <span class="form__mensagem">{{mensagem}}</span>
+
+  <div class="form__entrada">
+    <label class="form__label" for="descricao">Descrição</label>
+    <input class="form__input" type="text" formControlName="descricao" id="descricao">
+  </div>
+
+  <div class="form__entrada">
+    <label class="form__label" for="precoUnitario">Preco unitário</label>
+    <input class="form__input input--small" type="number" formControlName="precoUnitario" id="precoUnitario">
+  </div>
+
+  <div class="form__footer">
+    <input class="btn btn-sucess" type="submit" value="Salvar produto">
+  </div>
+
+</form>

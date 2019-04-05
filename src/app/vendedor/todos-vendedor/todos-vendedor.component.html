@@ -1,0 +1,13 @@
+<section class="form">
+
+  <div class="form__cabecalho">
+    <h2 class="form__titulo">Nossos Vendedores</h2>
+  </div>
+  
+  <div class="cards">
+    <div class="card" *ngFor="let vendedor of vendedores">
+      <h3 class="card__titulo"><i class="fas fa-user-tie"></i></h3>
+      <p class="card__descricao"><strong> {{vendedor.nome}}</strong></p>
+    </div>
+  </div>
+</section>

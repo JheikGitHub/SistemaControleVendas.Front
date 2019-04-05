@@ -1,0 +1,21 @@
+<fieldset class="form">
+  <div class="form__cabecalho">
+    <h2 class="form__titulo">Deseja realmente excluir esse produto?</h2>
+  </div>
+  <span>{{mensagem}}</span>
+
+  <dl>
+
+    <dt class="box__titulo"><strong>Produto:</strong></dt>
+    <dd class="box__descricao">{{produto?.descricao}}</dd>
+
+    <dt class="box__titulo"><strong> Valor unitário:</strong></dt>
+    <dd class="box__descricao">R$ {{produto?.precoUnitario}},00 </dd>
+
+  </dl>
+
+  <div class="form__footer">
+    <input class="btn btn-sucess" type="submit" value="Excluir produto" (click)="deleta()">
+  </div>
+
+</fieldset>

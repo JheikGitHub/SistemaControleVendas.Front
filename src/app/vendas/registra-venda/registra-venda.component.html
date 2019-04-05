@@ -1,0 +1,33 @@
+<section>
+  <form class="form" action="" [formGroup]="form" (ngSubmit)="registraVenda()">
+    
+    <div class="form__cabecalho">
+      <h2 class="form__titulo">Registrar Venda</h2>
+    </div>
+
+    <span>{{mensagem}}</span>
+
+    <div class="form__entrada">
+      <select class="form__input" formControlName="vendedorId">
+        <option value="">Selecione vendedor</option>
+        <option *ngFor="let vendedor of vendedores" [value]="vendedor.id">{{vendedor.nome}}</option>
+      </select>
+    </div>
+
+    <div class="form__entrada">
+      <select class="form__input" formControlName="produtoId">
+        <option value="">Selecione produto</option>
+        <option *ngFor="let produto of produtos" [ngValue]="produto">{{produto.descricao}}</option>
+      </select>
+    </div>
+    <div class="form__entrada">
+      <label class="form__label" for="quantidadeProduto">Quantidade</label>
+      <input class="form__input input--small" type="number" formControlName="quantidadeProduto" id="quantidadeProduto">
+    </div>
+
+    <div class="form__footer">
+      <input class="btn btn-sucess" type="submit" value="Finalizar compra">
+    </div>
+
+  </form>
+</section>
